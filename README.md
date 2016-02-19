@@ -32,6 +32,8 @@ Depending on your setup you may need to run:
 
 Also make sure you have configured `MEDIA_URL` and `MEDIA_PATH`.
 
+If you want to limit the maximum filesize to upload, I recommend to configure the webserver (apache, nginx etc.) accordingly. 
+
 ## Dependencies
 
 The only dependency is [pillow](https://github.com/python-pillow/Pillow), while [django-leaflet-storage](https://github.com/umap-project/django-leaflet-storage) or [uMap](https://github.com/umap-project/umap) is recommended :)
