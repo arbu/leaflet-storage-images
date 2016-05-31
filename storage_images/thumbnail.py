@@ -22,11 +22,11 @@ def orientate(image, value):
 def create_thumbnail(image, size):
     thumbnail = Image.new("RGB", image.size, (255,255,255))
     if len(image.split()) > 3:
-        thumbnail.paste(image, mask=image.split().get(3))
+        thumbnail.paste(image, mask=image.split()[3])
     else:
         thumbnail.paste(image)
     
-    if hasattr(image, "_getexif"):
+    if hasattr(image, "_getexif") and image._getexif():
         thumbnail = orientate(thumbnail, image._getexif().get(ORIENTATION, 1))
 
     thumbnail.thumbnail(size, Image.ANTIALIAS)
