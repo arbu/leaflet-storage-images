@@ -15,7 +15,7 @@ setup(
     include_package_data=True,
     platforms=["any"],
     zip_safe=False,
-    install_requires=["pillow!=3.0.0"],
+    install_requires=["pillow"],
     long_description=storage_images.__doc__,
 
     classifiers=[

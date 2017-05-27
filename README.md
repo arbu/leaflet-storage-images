@@ -36,13 +36,7 @@ If you want to limit the maximum filesize to upload, I recommend to configure th
 
 ## Dependencies
 
-The only dependency is [pillow](https://github.com/python-pillow/Pillow), while [django-leaflet-storage](https://github.com/umap-project/django-leaflet-storage) or [uMap](https://github.com/umap-project/umap) is recommended :)
-
-The current version of django-leaflet-storage depends on pillow 3.0.0, which contains a bug that prevents reading GPS-informations from an image. If you want/need this feature, install any other version of pillow, e.g.:
-
-    pip install pillow==3.1.1 --force-reinstall
-
-This won't brake django-leaflet-storage, only your dependency tree.
+The only dependency is [pillow](https://github.com/python-pillow/Pillow), while [django-leaflet-storage](https://github.com/umap-project/django-leaflet-storage) or [uMap](https://github.com/umap-project/umap) is recommended
 
 ## Basic usage
 
