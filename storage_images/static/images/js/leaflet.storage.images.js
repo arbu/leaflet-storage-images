@@ -23,12 +23,12 @@ L.FormBuilder.FileInput = L.FormBuilder.Input.extend({
 });
 
 
-L.Storage.Marker.include({
-    appendOrigEditFieldsets: L.Storage.Marker.prototype.appendEditFieldsets,
+L.U.Marker.include({
+    appendOrigEditFieldsets: L.U.Marker.prototype.appendEditFieldsets,
     appendEditFieldsets: function(container) {
         this.appendOrigEditFieldsets.call(this, container);
         var field = ['_image', {handler: 'FileInput', onChange: this.uploadImage, onChangeContext: this}];
-        var builder = new L.S.FormBuilder(this, [field]);
+        var builder = new L.U.FormBuilder(this, [field]);
         var fieldset = L.DomUtil.createFieldset(container, L._("Add image"));
         fieldset.appendChild(builder.build());
     },
@@ -40,7 +40,7 @@ L.Storage.Marker.include({
             // TODO
         };
         req.onerror = function(e) {
-            L.Storage.fire('ui:alert', {content: L._("Network error."), level: 'error'});
+            self.map.ui.alert({content: L._("Network error."), level: 'error'});
             delete self._image;
             this.edit();
         };
@@ -62,7 +62,7 @@ L.Storage.Marker.include({
                 } else {
                     msg = L._("Upload aborted.");
                 }
-                L.Storage.fire('ui:alert', {content: msg, level: 'error', duration: 6000});
+                self.map.ui.alert({content: msg, level: 'error', duration: 6000});
             }
             delete self._image;
             self.edit();
