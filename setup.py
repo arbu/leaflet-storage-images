@@ -15,7 +15,7 @@ setup(
     include_package_data=True,
     platforms=["any"],
     zip_safe=False,
-    install_requires=["pillow"],
+    install_requires=["Django", "Pillow"],
     long_description=storage_images.__doc__,
 
     classifiers=[
